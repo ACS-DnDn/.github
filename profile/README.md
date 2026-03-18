@@ -21,24 +21,24 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                        고객 AWS 계정                             │
+│                        고객 AWS 계정                              │
 │  CloudTrail · Config · Security Hub · Health  →  EventBridge    │
 └───────────────────────────┬─────────────────────────────────────┘
                             │  크로스 계정 이벤트 전달
                             ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                      DnDn 플랫폼 계정                            │
+│                      DnDn 플랫폼 계정                              │
 │                                                                 │
 │  EventBridge Bus                                                │
-│       ├─ Worker Lambda   → SQS → 보고서 생성 트리거             │
-│       ├─ Finding Lambda  → S3  → Security Hub 이벤트 정규화     │
-│       └─ Health Lambda   → S3  → AWS Health 이벤트 정규화       │
+│       ├─ Worker Lambda   → SQS → 보고서 생성 트리거                 │
+│       ├─ Finding Lambda  → S3  → Security Hub 이벤트 정규화        │
+│       └─ Health Lambda   → S3  → AWS Health 이벤트 정규화          │
 │                                                                 │
 │  API Server (NestJS)  ←─────────────────  Web Dashboard (React) │
 │       └─ MariaDB · S3 · SQS                                     │
 │                                                                 │
-│  Report Service ─ AI 기반 보고서 자동 생성                       │
-│  HR Portal      ─ 멤버·리더·HR 권한 관리                        │
+│  Report Service ─ AI 기반 보고서 자동 생성                           │
+│  HR Portal      ─ 멤버·리더·HR 권한 관리                            │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
